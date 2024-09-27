@@ -228,6 +228,33 @@ public class LocalDateTimeUtil {
 		);
 	}
 
+
+
+	/**
+	 * {@link TemporalAccessor}转{@link LocalDate}，使用默认时区
+	 *
+	 * @param temporalAccessor {@link TemporalAccessor}
+	 * @return {@link LocalDate}
+	 * @since 5.3.10
+	 */
+	public static LocalDate ofDate2(TemporalAccessor temporalAccessor) {
+		if (null == temporalAccessor) {
+			return null;
+		}
+
+		if (temporalAccessor instanceof LocalDateTime) {
+			return ((LocalDateTime) temporalAccessor).toLocalDate();
+		} else if(temporalAccessor instanceof Instant){
+			return of(temporalAccessor).toLocalDate();
+		}
+
+		return LocalDate.of(
+			TemporalAccessorUtil.get(temporalAccessor, ChronoField.YEAR),
+			TemporalAccessorUtil.get(temporalAccessor, ChronoField.MONTH_OF_YEAR),
+			TemporalAccessorUtil.get(temporalAccessor, ChronoField.DAY_OF_MONTH)
+		);
+	}
+
 	/**
 	 * 解析日期时间字符串为{@link LocalDateTime}，仅支持yyyy-MM-dd'T'HH:mm:ss格式，例如：2007-12-03T10:15:30<br>
 	 * 即{@link DateTimeFormatter#ISO_LOCAL_DATE_TIME}
