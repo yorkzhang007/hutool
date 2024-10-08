@@ -27,6 +27,16 @@ public class CollUtilTest {
 	}
 
 	@Test
+	public void testSort() {
+		final List<String> list = CollUtil.newArrayList("aaa", "bbb", "ccc", "ddd");
+		for (int i = 0; i < list.size(); i++) {
+			if (i == 1 ){
+				list.remove(list.get(i));
+			}
+		}
+	}
+
+	@Test
 	public void testRemoveWithAddIf() {
 		ArrayList<Integer> list = CollUtil.newArrayList(1, 2, 3);
 		final ArrayList<Integer> exceptRemovedList = CollUtil.newArrayList(2, 3);
