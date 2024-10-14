@@ -41,6 +41,7 @@ public final class SensitiveUtil {
 				return true;
 			});
 
+
 		} else {
 			init(sensitiveWords);
 		}
