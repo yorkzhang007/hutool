@@ -40,6 +40,7 @@ public final class SensitiveUtil {
 				init(sensitiveWords);
 				return true;
 			});
+
 		} else {
 			init(sensitiveWords);
 		}
