@@ -29,6 +29,7 @@ public class CollectorUtil {
 
 	/**
 	 * 说明已包含IDENTITY_FINISH特征 为 Characteristics.IDENTITY_FINISH 的缩写
+	 *
 	 */
 	public static final Set<Collector.Characteristics> CH_ID
 		= Collections.unmodifiableSet(EnumSet.of(Collector.Characteristics.IDENTITY_FINISH));
