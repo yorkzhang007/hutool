@@ -23,6 +23,7 @@ public class CollUtilTest {
 	public void testPredicateContains() {
 		final ArrayList<String> list = CollUtil.newArrayList("bbbbb", "aaaaa", "ccccc");
 		assertTrue(CollUtil.contains(list, s -> s.startsWith("a")));
+
 		assertFalse(CollUtil.contains(list, s -> s.startsWith("d")));
 	}
 
