@@ -2,6 +2,7 @@ package cn.hutool.core.collection;
 
 import cn.hutool.core.comparator.ComparableComparator;
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.lang.Console;
 import cn.hutool.core.lang.Dict;
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.StrUtil;
@@ -23,7 +24,7 @@ public class CollUtilTest {
 	public void testPredicateContains() {
 		final ArrayList<String> list = CollUtil.newArrayList("bbbbb", "aaaaa", "ccccc");
 		assertTrue(CollUtil.contains(list, s -> s.startsWith("a")));
-
+		Console.log(list);
 		assertFalse(CollUtil.contains(list, s -> s.startsWith("d")));
 	}
 
